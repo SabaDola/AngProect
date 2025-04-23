@@ -6,10 +6,10 @@
   <hr />
   
   <h3>ოთახები:</h3>
-<div *ngFor="let room of rooms" class="mb-4 border p-4 rounded shadow">
-  <h4 class="font-bold">ოთახი #{{ room.id }}</h4>
-  <p>ტიპი: {{ room.type }}</p>
-  <a [routerLink]="['/booking', room.id]" class="text-blue-600 hover:underline">დაჯავშნა</a>
+<div *ngFor="let room of rooms" class="hotel-details">
+  <h4 class="font-bold">ოთახი {{ room.id }}</h4>
+  <p> {{ room.type }}</p>
+  <a [routerLink]="['/booking', room.id]" class="booking">დაჯავშნა</a>
 </div>
 
   
