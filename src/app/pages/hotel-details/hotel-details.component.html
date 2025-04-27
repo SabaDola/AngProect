@@ -9,7 +9,7 @@
 <div *ngFor="let room of rooms" class="hotel-details">
   <h4 class="font-bold">ოთახი {{ room.id }}</h4>
   <p> {{ room.type }}</p>
-  <a [routerLink]="['/booking', room.id]" class="booking">დაჯავშნა</a>
+  <a routerLink="/booking/{{room.id}}" class="booking">დაჯავშნა</a>
 </div>
 
   

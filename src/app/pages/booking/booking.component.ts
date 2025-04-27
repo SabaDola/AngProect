@@ -29,12 +29,17 @@ export class BookingComponent implements OnInit {
   
   success = false;
 
-  constructor(private bookingService: BookingService, private route: ActivatedRoute) {}
+  constructor(private bookingService: BookingService, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => {
+      console.log(params);
+      this.roomId = params['roomId'];
+    });
+  }
 
 
   ngOnInit(): void {
-  const id = this.route.snapshot.paramMap.get('id');
-  this.roomId = id ? Number(id) : 0;
+  // const id = this.route.snapshot.paramMap.get('id');
+  // this.roomId = id ? Number(id) : 0;
 }
 
 bookRoom() {
