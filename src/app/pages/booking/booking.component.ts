@@ -33,6 +33,8 @@ export class BookingComponent implements OnInit {
     this.route.params.subscribe(params => {
       console.log(params);
       this.roomId = params['roomId'];
+      console.log(this.roomId);
+      this.bookingData.roomID = this.roomId; // Set the roomId in bookingData
     });
   }
 
@@ -44,7 +46,19 @@ export class BookingComponent implements OnInit {
 
 bookRoom() {
   console.log(this.bookingData); // ← აქ ნახე JSON-ი
-  this.bookingService.createBooking(this.bookingData).subscribe(resp=>console.log(resp)
+  this.bookingService.createBooking(this.bookingData).subscribe({
+    next: (response) => {
+      console.log('Response:', response);
+    },
+    error: (err) => {
+      if (err.error && err.error.message) {
+        console.error('დაჯავშნის შეცდომა:', err.error.message);
+      } else if (err.message) {
+        console.error('დაჯავშნის შეცდომა:', err);
+      }
+    }
+
+  }
     
     // next: () => alert('დაჯავშნა წარმატებულია'),
     // error: (err) => {
