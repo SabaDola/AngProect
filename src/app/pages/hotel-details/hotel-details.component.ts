@@ -28,6 +28,10 @@ export class HotelDetailsComponent implements OnInit {
     });
     this.roomService.getRoomsByHotelId(hotelId).subscribe(rooms => {
       this.rooms = rooms;
+      console.log(this.rooms);
+      
     });
+    
   }
+  
 }

@@ -1,22 +1,42 @@
 <h2>დაჯავშნა</h2>
- 
-<form (ngSubmit)="bookRoom()">
-  <label>სახელი და გვარი:</label>
-  <input type="text" [(ngModel)]="fullName" name="fullName" required />
- 
-  <label>ტელეფონი:</label>
-  <input type="text" [(ngModel)]="phone" name="phone" required />
- 
-  <label>დაწყების თარიღი:</label>
-  <input type="date" [(ngModel)]="dateFrom" name="dateFrom" required />
- 
-  <label>დასრულების თარიღი:</label>
-  <input type="date" [(ngModel)]="dateTo" name="dateTo" required />
- 
-  <button type="submit">დაჯავშნა</button>
-</form>
- 
-<div *ngIf="success" style="margin-top: 1rem; color: green;">
-  ✔ დაჯავშნა წარმატებით შესრულდა!
-</div>
- 
+
+<div class="main">
+  <div id="roomImagesCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <div 
+              class="carousel-item" 
+              *ngFor="let image of singleRoom.images; let i = index" 
+              [class.active]="i === 0">
+    <img [src]="image.source" class="d-block w-100" alt="Room image">
+    </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#roomImagesCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#roomImagesCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+  
+  <form (ngSubmit)="bookRoom()">
+    <label>სახელი და გვარი:</label>
+    <input type="text" [(ngModel)]="fullName" name="fullName" required />
+   
+    <label>ტელეფონი:</label>
+    <input type="text" [(ngModel)]="phone" name="phone" required />
+   
+    <label>დაწყების თარიღი:</label>
+    <input type="date" [(ngModel)]="dateFrom" name="dateFrom" required />
+   
+    <label>დასრულების თარიღი:</label>
+    <input type="date" [(ngModel)]="dateTo" name="dateTo" required />
+   
+    <button type="submit">დაჯავშნა</button>
+  </form>
+   
+  <div *ngIf="success" style="margin-top: 1rem; color: green;">
+    ✔ დაჯავშნა წარმატებით შესრულდა!
+  </div>
+  </div>

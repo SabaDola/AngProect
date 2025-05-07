@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { BookingService, Booking } from '../../core/services/booking.service';
 import { FormsModule } from '@angular/forms';
+import { RoomService } from '../../core/services/room.service';
  
  
  
@@ -32,18 +33,24 @@ export class BookingComponent implements OnInit {
   };
  
   success = false;
+  singleRoom: any;
  
-  constructor(private bookingService: BookingService, private route: ActivatedRoute) {
+  constructor(private bookingService: BookingService, private route: ActivatedRoute, private roomService: RoomService) {
     this.route.params.subscribe(params => {
       console.log(params);
       this.roomId = params['roomId'];
       console.log(this.roomId);
       this.bookingData.roomID = this.roomId; // Set the roomId in bookingData
+    
     });
   }
  
  
   ngOnInit(): void {
+   this.roomService.getRoomById(this.roomId).subscribe((data) => {
+      this.singleRoom = data;
+      console.log(this.singleRoom);
+   });
   // const id = this.route.snapshot.paramMap.get('id');
   // this.roomId = id ? Number(id) : 0;
 }

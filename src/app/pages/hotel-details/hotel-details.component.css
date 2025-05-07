@@ -1,18 +1,56 @@
-a{
-    text-decoration: none;
-    color: #3700ff;
-}
 .hotel-details {
-    display: flex;
-    flex-direction: column; /* აქ შეცვალე 1fr -> column */
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto; /* auto მარჯვენა-მარცხენა ცენტრში მოსაყვანად */
-    padding: 10px;
+    background: var(--color-surface);
     border-radius: 10px;
-    background-color: #f5f5f5;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* აქ აძლევ მაქსიმალურ სიგანეს */
-    width: 100%; /* აქ ვუთითებთ რომ 100%-მდე გაიზარდოს მაგრამ არ გადააჭარბოს max-width-ს */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;  
+    display: flex;  
   }
   
+  
+  .hotel-details img {
+    width: 50%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .hotel-details h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .hotel-details p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  
+  .hotel-details .booking {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .hotel-details .booking:hover {
+    background: var(--color-secondary);
+  }
+
+  .box{
+    width: 50%;
+  }
+
+  @media screen and (max-width: 768px) {
+   
+    .hotel-details{
+      flex-direction: column; 
+      gap: 10px;
+    }
+    .hotel-details img {
+      width: 100%;
+      order: -1;
+    }
+  }

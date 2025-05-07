@@ -12,4 +12,8 @@ export class RoomService {
   getRoomsByHotelId(hotelId: number): Observable<any> {
     return this.http.get(`${'https://hotelbooking.stepprojects.ge/api/Rooms/GetAll'}?HotelId=${hotelId}`);
   }
+  getRoomById(roomId: number): Observable<any> {
+    return this.http.get(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${roomId}`);
+  }
+
 }

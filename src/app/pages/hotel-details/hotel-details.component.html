@@ -7,9 +7,13 @@
   
   <h3>ოთახები:</h3>
 <div *ngFor="let room of rooms" class="hotel-details">
-  <h4 class="font-bold">ოთახი {{ room.id }}</h4>
-  <p> {{ room.type }}</p>
-  <a routerLink="/booking/{{room.id}}" class="booking">დაჯავშნა</a>
+  <div class="box">
+    <h4 class="font-bold"> {{ room.name }}</h4> 
+    <h5>{{room.maximumGuests}} Guests </h5>
+    <h5>ფასი:{{ room.pricePerNight }}</h5>
+    <a routerLink="/booking/{{room.id}}" class="booking">დაჯავშნა</a>
+  </div>
+  <img [src]="room.images[0].source" alt="">
 </div>
 
   
