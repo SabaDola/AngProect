@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HotelDetailsComponent } from './pages/hotel-details/hotel-details.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { DeleteBookingComponent } from './delete-booking/delete-booking.component';
+import { AuthFormComponent } from './auth/auth.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'}, 
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'booking/:roomId', component: BookingComponent },
   {path: 'bookings', component: BookingComponent },
   {path: 'booking' , component: DeleteBookingComponent },
+  {path: 'app-auth' , component: AuthFormComponent },
 
 ];

@@ -1,0 +1,16 @@
+<div class="auth-container">
+  <form (ngSubmit)="register()" class="auth-form">
+    <h3>რეგისტრაცია</h3>
+    <input type="email" [(ngModel)]="regEmail" name="regEmail" placeholder="ელ.ფოსტა" required>
+    <input type="password" [(ngModel)]="regPassword" name="regPassword" placeholder="პაროლი" required>
+    <button type="submit">რეგისტრაცია</button>
+    <div *ngIf="regMessage" class="auth-message">{{regMessage}}</div>
+  </form>
+  <form (ngSubmit)="login()" class="auth-form">
+    <h3>შესვლა</h3>
+    <input type="email" [(ngModel)]="logEmail" name="logEmail" placeholder="ელ.ფოსტა" required>
+    <input type="password" [(ngModel)]="logPassword" name="logPassword" placeholder="პაროლი" required>
+    <button type="submit">შესვლა</button>
+    <div *ngIf="logMessage" class="auth-message">{{logMessage}}</div>
+  </form>
+</div>

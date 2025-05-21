@@ -3,12 +3,13 @@ import { HotelService } from '../../core/services/hotel.service';
 import { Hotel } from '../../models/hotel.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { AuthFormComponent } from "../../auth/auth.component";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  imports : [CommonModule, RouterModule], // Add any necessary imports here
+  imports: [CommonModule, RouterModule], // Add any necessary imports here
 })
 export class HomeComponent implements OnInit {
   hotels: Hotel[] = [];
